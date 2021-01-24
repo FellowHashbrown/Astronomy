@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link href="/static/style.css" rel="stylesheet" type="text/css" />
+
+        <link rel="shortcut icon" href="/static/favicon.ico">
+        <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png">
+        <link rel="manifest" href="/static/site.webmanifest">
+        <link rel="mask-icon" href="/static/safari-pinned-tab.svg" color="#202020">
+        <meta name="msapplication-TileColor" content="#202020">
+        <meta name="msapplication-TileImage" content="/static/mstile-144x144.png">
+        <meta name="theme-color" content="#202020">
+        <meta name="msapplication-config" content="/static/browserconfig.xml">
+
+        <meta property="theme-color" content="#EC7600" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="assets/logo.png" />
+
+        <meta property="og:site_name" content="Fellow Hashbrown" />
+        <meta property="og:url" content="https://astronomy.fellowhashbrown.com/" />
+        <meta property="og:description" content="i enjoy looking up at the stars and the night sky. i've gone to the lengths to start becoming an (amateur) astrophotographer. this page is dedicated to all my astrophotography :)" />
+        <meta property="og:title" content="Astronomy" />
+        <title>Astronomy</title>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
+    </head>
+    <body class="body">
+
+        <!--Top Nav Bar (no navigation)-->
+        <div class="topnav">
+            <img src="/static/logo.png" class="icon-image">
+        </div>
+
+        <!--Content-->
+        <div class="content">
+            <h1 class="title">
+                <span class="code-class"><code class="code-field">website</code>.</span><code class="code-field">astronomy</code>();
+            </h1>
+            <div class="title-block">
+                i enjoy looking up at the stars and the night sky.
+                i've gone to the lengths to start becoming an (amateur) astrophotographer
+                this page is dedicated to all my astrophotography :)
+            </div>
+
+            {% for year in years -%}
+                <a name="{{ year }}"></a>
+                <h2 class="section">
+                    <span class="code-class"><code class="code-field">astronomy</code>.</span><code class="code-field">year{{ year }}</code>();
+                </h2>
+                <div class="section-block">
+                    {% for month in years[year] %}
+                        <input type="checkbox" class="dropdown-data" id="{{ month }}-{{ year }}" name="menu" />
+                        <label for="{{ month }}-{{ year }}">
+                            <h3>{{ month }}
+                                <span class="dropdown-arrow-right">&#9654;</span>
+                                <span class="dropdown-arrow-down">&#9660;</span>
+                            </h3>
+                        </label>
+                        <ul class="dropdown-data">
+                            {% if years[year][month] is not none %}
+                                {% for image in years[year][month] %}
+                                    <li style="list-style: none; text-align: center">
+                                        <p>{{ image.description }}</p>
+                                        <img src="{{ image.link }}" width="60%" height="60%">
+                                    </li>
+                                {% endfor %}
+                            {% else %}
+                                <p>there is nothing yet for {{ month }} :(</p>
+                            {% endif %}
+                        </ul>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+    </body>
+    <br>
+    <footer class="footer">
+        <small><code>Copyright &copy; 2018<script>new Date().getFullYear()>2018&&document.write("-"+new Date().getFullYear());</script>, Jonah Pierce</code></small>
+    </footer>
+</html>
