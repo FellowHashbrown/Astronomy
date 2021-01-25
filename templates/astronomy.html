@@ -18,7 +18,7 @@
 
         <meta property="theme-color" content="#EC7600" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="assets/logo.png" />
+        <meta property="og:image" content="static/logo.png" />
 
         <meta property="og:site_name" content="Fellow Hashbrown" />
         <meta property="og:url" content="https://astronomy.fellowhashbrown.com/" />
@@ -47,6 +47,21 @@
                 this page is dedicated to all my astrophotography :)
             </div>
 
+            <h2 class="section">
+                <span class="code-class"><code class="code-field">astronomy</code>.</span><code class="code-field">equipment</code>();
+            </h2>
+            <div class="section-block">
+                    camera: Canon EOS Rebel T2i <br>
+                    camera remote: Neewer LCD Intervalometer <br>
+                    telescope: Celestron StarSense Explorer LT (Newtonian Reflector) <br>
+                    <br>
+                    (soon) Sky-Watcher Star Adventurer 2i (camera equatorial mount) <br>
+                    (soon) Astronomik 12nm H-Alpha (camera filter) <br>
+                    (later) Canon EOS Rebel T7i (camera) <br>
+                    (later) Orion Atlas EQ-G (equatorial mount) <br>
+                    (later) Orion 8" Newtonian Reflector (Optical Tube Assembly) <br>
+            </div>
+
             {% for year in years -%}
                 <a name="{{ year }}"></a>
                 <h2 class="section">
@@ -66,7 +81,7 @@
                                 {% for image in years[year][month] %}
                                     <li style="list-style: none; text-align: center">
                                         <p>{{ image.description }}</p>
-                                        <img src="{{ image.link }}" width="60%" height="60%">
+                                        <img class="blog-image" src="{{ image.link }}">
                                     </li>
                                 {% endfor %}
                             {% else %}

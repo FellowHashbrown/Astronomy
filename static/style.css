@@ -342,10 +342,9 @@ iframe {
     background-color: #293134;
 }
 
-.change-log,
-.change-log li {
-    list-style-type: square;
-    font-style: italic;
+.blog-image {
+    width: 60%;
+    height: 60%;
 }
 
 /* - - - API Styles - - - */
@@ -390,37 +389,6 @@ input:not(:checked)~label *.dropdown-arrow-down {
     display: none;
 }
 
-.line {
-  fill:none;
-  transition: stroke-dasharray 0.6s, stroke-dashoffset 0.6s;
-  stroke:#ec7600;
-  stroke-width:5.5;
-  stroke-linecap:round;
-}
-
-.ham {
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-  transition: transform 0.6s, margin-left 0.3s;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.ham2 .top {
-  stroke-dasharray: 40 121;
-}
-.ham2 .bottom {
-  stroke-dasharray: 40 121;
-}
-.ham2.active .top {
-  stroke-dashoffset: -102px;
-}
-.ham2.active .bottom {
-  stroke-dashoffset: -102px;
-}
-
 /* - API Parameter Table - */
 
 .required {
@@ -434,80 +402,19 @@ input:not(:checked)~label *.dropdown-arrow-down {
     border-radius: 5px;
 }
 
-.api-parameter-table,
-.download-table {
-	border-collapse: collapse;
-	width: 100%;
-    font-size: 1.5vw;
-}
-
-.api-parameter-table th,
-.download-table th {
-	border: 1px solid #808080;
-	text-align: center;
-}
-
-.api-parameter-table td,
-.download-table td {
-    border: 1px solid #808080;
-    text-align: left;
-}
-
-.api-parameter-table tr:first-child th,
-.download-table tr:first-child th {
-	border-top: 0;
-}
-
-.api-parameter-table tr:last-child td,
-.download-table tr:last-child td {
-	border-bottom: 0;
-}
-
-.api-parameter-table tr td:first-child,
-.api-parameter-table tr th:first-child,
-.download-table tr td:first-child,
-.download-table tr th:first-child {
-	border-left: 0;
-}
-
-.api-parameter-table tr td:last-child,
-.api-parameter-table tr th:last-child,
-.download-table tr td:last-child,
-.download-table tr th:last-child {
-	border-right: 0;
-}
-
 /* - - - Responsive Styles - - - */
 
 @media only screen and (max-width: 786px) {
 
     /* - - - Other Custom Styles - - - */
 
+    .blog-image {
+        width: 90%;
+        height: 90%;
+    }
+
     .code-class {
         display: none;
-    }
-
-    /* - - - Navigation Styles - - - */
-
-    .navbar {
-        max-width: 25%;
-        padding-top: 15px;
-    }
-
-    .navbar a, .navbar .dropdown-button {
-        font-size: 3vw;
-    }
-
-    .navbar .dropdown-content a {
-        font-size: 3vw;
-    }
-
-    .openbutton {
-        font-size: 3vw;
-    }
-
-    .breadcrumbs {
-        visibility: hidden;
     }
 
     .no-border {
@@ -537,12 +444,5 @@ input:not(:checked)~label *.dropdown-arrow-down {
         margin-right: 1%;
         width: 98%;
         font-size: 3.5vw;
-    }
-
-    /* - - - API Style - - - */
-
-    .api-parameter-table,
-    .download-table {
-        font-size: 2.5vw;
     }
 }
