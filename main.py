@@ -47,7 +47,8 @@ def home():
                 for i in range(len(images)):
                     images[i] = {
                         "link": images[i]["link"],
-                        "description": images[i]["description"]
+                        "description": images[i]["description"],
+                        "type": images[i]["type"]
                     }
                 imgur_images[year][month] = images
             else:
