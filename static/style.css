@@ -349,13 +349,7 @@ iframe {
 
 /* - - - API Styles - - - */
 
-
-.api-responses {
-    font-weight: normal;
-    list-style-type: none;
-}
-
-.api-response-label, input.dropdown-data, ul.api-response, ul.dropdown-data {
+input, ul.dropdown-data {
     display: none;
 }
 
@@ -365,41 +359,14 @@ label {
     cursor: pointer;
 }
 
-input:checked~ul.api-response,
 input:checked~ul.dropdown-data {
     display: block;
-}
-
-.api-response-code {
-    background-color: #A0A0A0;
-    border-radius: 5px;
-    color: #101010;
-}
-
-.api-json-response {
-    border: 1px solid #808080;
-    border-radius: 5px;
-    background-color: #101010;
-    width: fit-content;
 }
 
 input:checked~label *.dropdown-arrow-right,
 input:not(:checked)~label *.dropdown-arrow-down {
     visibility: hidden;
     display: none;
-}
-
-/* - API Parameter Table - */
-
-.required {
-    color: red;
-}
-
-.code-block {
-    overflow: auto;
-    white-space: nowrap;
-    border: 1px solid #808080;
-    border-radius: 5px;
 }
 
 /* - - - Responsive Styles - - - */

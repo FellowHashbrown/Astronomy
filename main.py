@@ -10,7 +10,8 @@ from requests import get
 app = Flask("Fellow Hashbrown APIs")
 imgur_hashes = {
     "2021": {
-        "January": "GZgoSdg"
+        "January": "GZgoSdg",
+        "February": "jVLIRE7"
     }
 }
 imgur_images = {}

@@ -69,32 +69,34 @@
                     <span class="code-class"><code class="code-field">astronomy</code>.</span><code class="code-field">year{{ year }}</code>();
                 </h2>
                 <div class="section-block">
-                    {% for month in years[year] %}
-                        <input type="checkbox" class="dropdown-data" id="{{ month }}-{{ year }}" name="menu" />
-                        <label for="{{ month }}-{{ year }}">
-                            <h3>{{ month }}
-                                <span class="dropdown-arrow-right">&#9654;</span>
-                                <span class="dropdown-arrow-down">&#9660;</span>
-                            </h3>
-                        </label>
-                        <ul class="dropdown-data">
-                            {% if years[year][month] is not none %}
-                                {% for image in years[year][month] %}
-                                    <li style="list-style: none; text-align: center">
-                                        <p>{{ image.description }}</p>
-                                        {% if image.type == 'video/mp4' %}
-                                            <video class="blog-image" autoplay loop>
-                                                <source src="{{ image.link }}" type="video/mp4">
-                                            </video>
-                                        {% else %} 
-                                            <img class="blog-image" src="{{ image.link }}">
-                                        {% endif %}
-                                    </li>
-                                {% endfor %}
-                            {% else %}
-                                <p>there is nothing yet for {{ month }} :(</p>
-                            {% endif %}
-                        </ul>
+                    {% for month in years[year] -%}
+                        <div>
+                            <input type="checkbox" class="dropdown-data-label" id="{{ month }}-{{ year }}" name="menu" />
+                            <label for="{{ month }}-{{ year }}">
+                                <h3>{{ month }}
+                                    <span class="dropdown-arrow-right">&#9654;</span>
+                                    <span class="dropdown-arrow-down">&#9660;</span>
+                                </h3>
+                            </label>
+                            <ul class="dropdown-data">
+                                {% if years[year][month] is not none %}
+                                    {% for image in years[year][month] %}
+                                        <li style="list-style: none; text-align: center">
+                                            <p>{{ image.description }}</p>
+                                            {% if image.type == 'video/mp4' %}
+                                                <video class="blog-image" autoplay loop>
+                                                    <source src="{{ image.link }}" type="video/mp4">
+                                                </video>
+                                            {% else %} 
+                                                <img class="blog-image" src="{{ image.link }}">
+                                            {% endif %}
+                                        </li>
+                                    {% endfor %}
+                                {% else %}
+                                    <p>there is nothing yet for {{ month }} :(</p>
+                                {% endif %}
+                            </ul>
+                        </div>
                     {% endfor %}
                 </div>
             {% endfor %}
