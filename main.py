@@ -11,12 +11,17 @@ app = Flask("Fellow Hashbrown APIs")
 imgur_hashes = {
     "2021": {
         "January": "GZgoSdg",
-        "February": "jVLIRE7"
+        "February": "jVLIRE7",
+        "March": "N7Rcvsj"
     }
 }
 imgur_images = {}
 
 # # # # # # # # # # # # # # # # # # # # 
+
+@app.errorhandler(Exception)
+def error(error):
+    return render_template("error.html")
 
 @app.route("/")
 def home():
